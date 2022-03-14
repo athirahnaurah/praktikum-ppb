@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Memorist">
         <activity
+            android:name=".AddNewTask"
+            android:parentActivityName=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".TaskDetail"
             android:exported="false" />
         <activity

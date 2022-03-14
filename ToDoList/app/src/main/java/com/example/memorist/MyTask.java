@@ -1,9 +1,27 @@
 package com.example.memorist;
 
+import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "task_table")
 public class MyTask {
+    @PrimaryKey(autoGenerate = true)
+    int id;
+    @ColumnInfo(name="title")
+    @NonNull
     String title;
+
+    @ColumnInfo(name="date")
+    @NonNull
     String date;
+
+    @ColumnInfo(name="desc")
     String desc;
+
+    @ColumnInfo(name="course")
+    @NonNull
     String course;
 
     public MyTask(String title, String date, String desc, String course) {

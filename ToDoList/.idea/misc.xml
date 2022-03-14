@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/athirah/POLBAN/SEMESTER4/PPB Mobile/PRAKTIKUM/AndroidStudio/PPB/ToDoList/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1555" />
+        <entry key="..\:/athirah/POLBAN/SEMESTER4/PPB Mobile/PRAKTIKUM/AndroidStudio/PPB/ToDoList/app/src/main/res/drawable/bg_add_task.xml" value="0.1565" />
         <entry key="..\:/athirah/POLBAN/SEMESTER4/PPB Mobile/PRAKTIKUM/AndroidStudio/PPB/ToDoList/app/src/main/res/drawable/bg_button_add.xml" value="0.1905" />
         <entry key="..\:/athirah/POLBAN/SEMESTER4/PPB Mobile/PRAKTIKUM/AndroidStudio/PPB/ToDoList/app/src/main/res/drawable/bg_task_detail.xml" value="0.1555" />
         <entry key="..\:/athirah/POLBAN/SEMESTER4/PPB Mobile/PRAKTIKUM/AndroidStudio/PPB/ToDoList/app/src/main/res/drawable/bg_task_item.xml" value="0.1905" />
@@ -13,10 +14,11 @@
         <entry key="..\:/athirah/POLBAN/SEMESTER4/PPB Mobile/PRAKTIKUM/AndroidStudio/PPB/ToDoList/app/src/main/res/drawable/ic_create.xml" value="0.1555" />
         <entry key="..\:/athirah/POLBAN/SEMESTER4/PPB Mobile/PRAKTIKUM/AndroidStudio/PPB/ToDoList/app/src/main/res/drawable/ic_grading.xml" value="0.1555" />
         <entry key="..\:/athirah/POLBAN/SEMESTER4/PPB Mobile/PRAKTIKUM/AndroidStudio/PPB/ToDoList/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1555" />
+        <entry key="..\:/athirah/POLBAN/SEMESTER4/PPB Mobile/PRAKTIKUM/AndroidStudio/PPB/ToDoList/app/src/main/res/layout/activity_add_new_task.xml" value="0.18" />
         <entry key="..\:/athirah/POLBAN/SEMESTER4/PPB Mobile/PRAKTIKUM/AndroidStudio/PPB/ToDoList/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/athirah/POLBAN/SEMESTER4/PPB Mobile/PRAKTIKUM/AndroidStudio/PPB/ToDoList/app/src/main/res/layout/activity_new_task.xml" value="0.22" />
         <entry key="..\:/athirah/POLBAN/SEMESTER4/PPB Mobile/PRAKTIKUM/AndroidStudio/PPB/ToDoList/app/src/main/res/layout/activity_splash_screen.xml" value="0.18" />
-        <entry key="..\:/athirah/POLBAN/SEMESTER4/PPB Mobile/PRAKTIKUM/AndroidStudio/PPB/ToDoList/app/src/main/res/layout/activity_task_detail.xml" value="0.20416666666666666" />
+        <entry key="..\:/athirah/POLBAN/SEMESTER4/PPB Mobile/PRAKTIKUM/AndroidStudio/PPB/ToDoList/app/src/main/res/layout/activity_task_detail.xml" value="0.22" />
         <entry key="..\:/athirah/POLBAN/SEMESTER4/PPB Mobile/PRAKTIKUM/AndroidStudio/PPB/ToDoList/app/src/main/res/layout/content_main.xml" value="0.1766304347826087" />
         <entry key="..\:/athirah/POLBAN/SEMESTER4/PPB Mobile/PRAKTIKUM/AndroidStudio/PPB/ToDoList/app/src/main/res/layout/tasklist_item.xml" value="0.33" />
         <entry key="..\:/athirah/POLBAN/SEMESTER4/PPB Mobile/PRAKTIKUM/AndroidStudio/PPB/ToDoList/app/src/main/res/menu/menu_bottom_nav.xml" value="0.20416666666666666" />
