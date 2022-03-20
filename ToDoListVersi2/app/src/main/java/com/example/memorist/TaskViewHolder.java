@@ -16,12 +16,12 @@ public class TaskViewHolder extends RecyclerView.ViewHolder{
 
     public TaskViewHolder(@NonNull View itemView) {
         super(itemView);
-        textViewTitle = itemView.findViewById(R.id.title);
-        textViewDate = itemView.findViewById(R.id.date);
+        textViewTitle = itemView.findViewById(R.id.titleItemView);
+        textViewDate = itemView.findViewById(R.id.dateItemView);
         layoutView = itemView.findViewById(R.id.layoutView);
     }
 
-    public void bind(String title, String date) {
+    public void bind (String title, String date) {
         textViewTitle.setText(title);
         textViewDate.setText(date);
     }

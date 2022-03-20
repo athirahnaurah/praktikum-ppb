@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.ListAdapter;
 
 public class TaskAdapter extends ListAdapter<MyTask, TaskViewHolder> {
     Context context;
+
     protected TaskAdapter(@NonNull DiffUtil.ItemCallback<MyTask> diffCallback, Context context) {
         super(diffCallback);
         this.context = context;
@@ -31,10 +32,10 @@ public class TaskAdapter extends ListAdapter<MyTask, TaskViewHolder> {
             @Override
             public void onClick(View view) {
                 Intent item = new Intent(context, TaskDetail.class);
-                item.putExtra("title",currentTask.getTitle());
-                item.putExtra("course",currentTask.getCourse());
-                item.putExtra("date",currentTask.getDate());
-                item.putExtra("desc",currentTask.getDesc());
+                item.putExtra(AddNewTask.EXTRA_TITLE,currentTask.getTitle());
+                item.putExtra(AddNewTask.EXTRA_COURSE,currentTask.getCourse());
+                item.putExtra(AddNewTask.EXTRA_DATE,currentTask.getDate());
+                item.putExtra(AddNewTask.EXTRA_DESC,currentTask.getDesc());
                 context.startActivity(item);
             }
         });

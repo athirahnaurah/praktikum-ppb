@@ -2,6 +2,7 @@ package com.example.memorist;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
@@ -15,7 +16,10 @@ public interface TaskDAO {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insert(MyTask Task);
 
-    @Query("SELECT * FROM task_table ORDER BY date DESC")
+    @Delete
+    void delete(MyTask Task);
+
+    @Query("SELECT * FROM task_table ORDER BY date ASC")
     LiveData<List<MyTask>> getAll(); //Room generates all necessary code to update the LiveData when the database is updated.
 
     @Query("DELETE FROM task_table")

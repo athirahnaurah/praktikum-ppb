@@ -51,12 +51,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode,resultCode,data);
         if(requestCode == NEW_TASK_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK){
-            String title = data.getStringExtra("title");
-            String course = data.getStringExtra("course");
-            String date = data.getStringExtra("date");
-            String desc = data.getStringExtra("desc");
+            String title = data.getStringExtra(AddNewTask.EXTRA_TITLE);
+            String course = data.getStringExtra(AddNewTask.EXTRA_COURSE);
+            String date = data.getStringExtra(AddNewTask.EXTRA_DATE);
+            String desc = data.getStringExtra(AddNewTask.EXTRA_DESC);
 
-            MyTask task = new MyTask(title, course, date, desc);
+            MyTask task = new MyTask(title, date, desc, course);
             tViewModel.insert(task);
 
             Toast.makeText(this,"Task Saved",Toast.LENGTH_SHORT).show();

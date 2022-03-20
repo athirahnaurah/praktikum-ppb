@@ -47,9 +47,9 @@ public abstract class TaskRoomDatabase extends RoomDatabase {
                 TaskDAO dao = INSTANCE.taskDao();
                 dao.deleteAll();
 
-                MyTask task = new MyTask("Tugas 1", "28-02-2022", "Membuat aplikasi to do list", "Mobile");
+                MyTask task = new MyTask("Tugas 1", "28/02/2022", "Membuat aplikasi to do list", "Mobile");
                 dao.insert(task);
-                MyTask task2 = new MyTask("Tugas 2", "28-Februari-2022", "To do list menggunakan database", "Mobile");
+                MyTask task2 = new MyTask("Tugas 2", "02/03/2022", "To do list menggunakan database", "Mobile");
                 dao.insert(task2);
 
             });

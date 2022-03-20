@@ -19,6 +19,10 @@ import java.util.Calendar;
 import java.util.Locale;
 
 public class AddNewTask extends AppCompatActivity {
+    public static final String EXTRA_TITLE = "com.example.memorist.EXTRA_TITLE";
+    public static final String EXTRA_COURSE = "com.example.memorist.EXTRA_COURSE";
+    public static final String EXTRA_DATE = "com.example.memorist.EXTRA_DATE";
+    public static final String EXTRA_DESC = "com.example.memorist.EXTRA_DESC";
     EditText addtitle, addcourse, adddate,adddesc;
     Button btnAdd;
     final Calendar calendar= Calendar.getInstance();
@@ -56,13 +60,13 @@ public class AddNewTask extends AppCompatActivity {
                 setResult(RESULT_CANCELED, replyIntent);
             } else {
                 String taskTitle = addtitle.getText().toString();
-                replyIntent.putExtra("title", taskTitle);
+                replyIntent.putExtra(EXTRA_TITLE, taskTitle);
                 String taskCourse = addcourse.getText().toString();
-                replyIntent.putExtra("course", taskCourse);
+                replyIntent.putExtra(EXTRA_COURSE, taskCourse);
                 String taskDate = adddate.getText().toString();
-                replyIntent.putExtra("date", taskDate);
+                replyIntent.putExtra(EXTRA_DATE, taskDate);
                 String taskDesc = adddesc.getText().toString();
-                replyIntent.putExtra("desc", taskDesc);
+                replyIntent.putExtra(EXTRA_DESC, taskDesc);
                 setResult(RESULT_OK, replyIntent);
             }
             finish();
@@ -72,6 +76,6 @@ public class AddNewTask extends AppCompatActivity {
     private void displayDate(){
         String myFormat="dd/MM/yy";
         SimpleDateFormat dateFormat=new SimpleDateFormat(myFormat, Locale.US);
-        adddesc.setText(dateFormat.format(calendar.getTime()));
+        adddate.setText(dateFormat.format(calendar.getTime()));
     }
 }

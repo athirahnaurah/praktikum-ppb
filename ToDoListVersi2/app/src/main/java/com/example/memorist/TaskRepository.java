@@ -22,4 +22,8 @@ public class TaskRepository {
             mTaskDao.insert(task);
         });
     }
+
+    public void delete(MyTask task){
+
+    }
 }
