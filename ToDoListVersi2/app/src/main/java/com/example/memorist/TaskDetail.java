@@ -33,21 +33,15 @@ public class TaskDetail extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        String title = intent.getStringExtra(AddNewTask.EXTRA_TITLE);
-        titles.setText(title);
+        MyTask taskReceive = intent.getParcelableExtra("task");
+        titles.setText(taskReceive.getTitle());
+        courses.setText(taskReceive.getCourse());
+        dates.setText(taskReceive.getDate());
+        descriptions.setText(taskReceive.getDesc());
 
-        String course = intent.getStringExtra(AddNewTask.EXTRA_COURSE);
-        courses.setText(course);
-
-        String date = intent.getStringExtra(AddNewTask.EXTRA_DATE);
-        dates.setText(date);
-
-        String desc = intent.getStringExtra(AddNewTask.EXTRA_DESC);
-        descriptions.setText(desc);
-
-        System.out.println("Course " + course);
-        System.out.println("title" + title);
-        System.out.println("date" + date);
-        System.out.println("desc" + desc);
+//        System.out.println("Course " + course);
+//        System.out.println("title" + title);
+//        System.out.println("date" + date);
+//        System.out.println("desc" + desc);
     }
 }

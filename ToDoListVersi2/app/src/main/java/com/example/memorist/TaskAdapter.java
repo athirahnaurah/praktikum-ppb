@@ -31,11 +31,9 @@ public class TaskAdapter extends ListAdapter<MyTask, TaskViewHolder> {
         holder.layoutView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                MyTask task = new MyTask(currentTask.getTitle(),currentTask.getDate(),currentTask.getDesc(),currentTask.getCourse());
                 Intent item = new Intent(context, TaskDetail.class);
-                item.putExtra(AddNewTask.EXTRA_TITLE,currentTask.getTitle());
-                item.putExtra(AddNewTask.EXTRA_COURSE,currentTask.getCourse());
-                item.putExtra(AddNewTask.EXTRA_DATE,currentTask.getDate());
-                item.putExtra(AddNewTask.EXTRA_DESC,currentTask.getDesc());
+                item.putExtra("task",task);
                 context.startActivity(item);
             }
         });

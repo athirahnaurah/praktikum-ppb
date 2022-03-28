@@ -1,12 +1,15 @@
 package com.example.memorist;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "task_table")
-public class MyTask {
+public class MyTask implements Parcelable {
     @PrimaryKey(autoGenerate = true)
     int id;
     @ColumnInfo(name="title")
@@ -62,4 +65,39 @@ public class MyTask {
     public void setCourse(String course) {
         this.course = course;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(this.id);
+        parcel.writeString(this.title);
+        parcel.writeString(this.course);
+        parcel.writeString(this.date);
+        parcel.writeString(this.desc);
+    }
+
+    protected MyTask(Parcel in){
+        this.id = in.readInt();
+        this.title = in.readString();
+        this.course = in.readString();
+        this.date = in.readString();
+        this.desc = in.readString();
+    }
+
+    public static final Parcelable.Creator<MyTask> CREATOR = new Parcelable.Creator<MyTask>(){
+
+        @Override
+        public MyTask createFromParcel(Parcel source) {
+            return new MyTask(source);
+        }
+
+        @Override
+        public MyTask[] newArray(int size) {
+            return new MyTask[size];
+        }
+    };
 }
