@@ -53,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
         if(requestCode == NEW_TASK_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK){
             MyTask task = data.getParcelableExtra("task");
 
-
             tViewModel.insert(task);
 
             Toast.makeText(this,"Task Saved",Toast.LENGTH_SHORT).show();
