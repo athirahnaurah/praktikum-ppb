@@ -132,14 +132,4 @@
             android:background="@drawable/bg_task_detail" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/buttonDelete"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:text="delete"
-        android:fontFamily="@font/judsonregular"
-        android:layout_marginTop="32dp"
-        android:layout_marginLeft="16dp"
-        android:backgroundTint="@color/purple"/>
-
 </LinearLayout>

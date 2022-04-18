@@ -25,11 +25,6 @@ public class TaskDetail extends AppCompatActivity {
         TextView courses = findViewById(R.id.editTextCourse);
         TextView dates = findViewById(R.id.editTextDate);
         TextView descriptions = findViewById(R.id.editTextDesc);
-        Button deleteBtn = findViewById(R.id.buttonDelete);
-
-        deleteBtn.setOnClickListener(view ->{
-
-        });
 
         Intent intent = getIntent();
 
