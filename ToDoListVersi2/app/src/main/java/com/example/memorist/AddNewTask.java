@@ -3,6 +3,7 @@ package com.example.memorist;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -10,18 +11,25 @@ import android.text.TextUtils;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TimePicker;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
 
 public class AddNewTask extends AppCompatActivity {
-    EditText addtitle, addcourse, adddate,adddesc;
+    EditText addtitle, addcourse, adddate,adddesc, addtime;
     Button btnAdd;
+    /**
+     * Calendar untuk mendapatkan waktu saat ini
+     */
     final Calendar calendar= Calendar.getInstance();
+    private TimePickerDialog timePickerDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +40,7 @@ public class AddNewTask extends AppCompatActivity {
         addcourse = findViewById(R.id.theCourse);
         adddate = findViewById(R.id.theduedate);
         adddesc = findViewById(R.id.desc);
+        addtime = findViewById(R.id.editTextAddTime);
         btnAdd= findViewById(R.id.buttonAdd);
 
         DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
@@ -43,6 +52,12 @@ public class AddNewTask extends AppCompatActivity {
                 displayDate();
             }
         };
+        addtime.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                showTimeDialog();
+            }
+        });
         adddate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,8 +73,9 @@ public class AddNewTask extends AppCompatActivity {
                 String taskTitle = addtitle.getText().toString();
                 String taskCourse = addcourse.getText().toString();
                 String taskDate = adddate.getText().toString();
+                String taskTime = addtime.getText().toString();
                 String taskDesc = adddesc.getText().toString();
-                MyTask task = new MyTask(taskTitle,taskDate,taskDesc,taskCourse);
+                MyTask task = new MyTask(taskTitle,taskDate,taskDesc,taskCourse,taskTime);
                 replyIntent.putExtra("task",task);
                 setResult(RESULT_OK, replyIntent);
             }
@@ -71,5 +87,26 @@ public class AddNewTask extends AppCompatActivity {
         String myFormat="dd/MM/yyyy";
         SimpleDateFormat dateFormat=new SimpleDateFormat(myFormat, Locale.US);
         adddate.setText(dateFormat.format(calendar.getTime()));
+    }
+
+    private void showTimeDialog(){
+        /**
+         * Initialize TimePicker Dialog
+         */
+        timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker timePicker, int hour, int minute) {
+                /**
+                 * Method ini dipanggil saat kita selesai memilih waktu di DatePicker
+                 */
+                addtime.setText(hour+":"+minute);
+            }
+            },
+                /**
+                 * Tampilkan jam saat ini ketika TimePicker pertama kali dibuka
+                 */
+                calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE),
+                DateFormat.is24HourFormat(this));
+        timePickerDialog.show();
     }
 }

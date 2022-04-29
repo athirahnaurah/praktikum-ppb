@@ -27,11 +27,11 @@ public class TaskAdapter extends ListAdapter<MyTask, TaskViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull TaskViewHolder holder, int position) {
         MyTask currentTask = getItem(position);
-        holder.bind(currentTask.getTitle(),currentTask.getDate());
+        holder.bind(currentTask.getTitle(),currentTask.getDate(), currentTask.getTime());
         holder.layoutView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MyTask task = new MyTask(currentTask.getTitle(),currentTask.getDate(),currentTask.getDesc(),currentTask.getCourse());
+                MyTask task = new MyTask(currentTask.getTitle(),currentTask.getDate(),currentTask.getDesc(),currentTask.getCourse(), currentTask.getTime());
                 Intent item = new Intent(context, TaskDetail.class);
                 item.putExtra("task",task);
                 context.startActivity(item);

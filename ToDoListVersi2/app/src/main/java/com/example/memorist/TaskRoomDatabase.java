@@ -11,7 +11,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 //declare the entities that belong in the database
-@Database(entities={MyTask.class},version = 1, exportSchema = false)
+@Database(entities={MyTask.class},version = 2, exportSchema = true)
 public abstract class TaskRoomDatabase extends RoomDatabase {
 
     public abstract TaskDAO taskDao();
@@ -46,12 +46,6 @@ public abstract class TaskRoomDatabase extends RoomDatabase {
                 // If you want to start with more words, just add them.
                 TaskDAO dao = INSTANCE.taskDao();
                 dao.deleteAll();
-
-                MyTask task = new MyTask("Tugas 1", "28/02/2022", "Membuat aplikasi to do list", "Mobile");
-                dao.insert(task);
-                MyTask task2 = new MyTask("Tugas 2", "02/03/2022", "To do list menggunakan database", "Mobile");
-                dao.insert(task2);
-
             });
         }
     };

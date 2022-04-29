@@ -25,6 +25,7 @@ public class TaskDetail extends AppCompatActivity {
         TextView courses = findViewById(R.id.editTextCourse);
         TextView dates = findViewById(R.id.editTextDate);
         TextView descriptions = findViewById(R.id.editTextDesc);
+        TextView time = findViewById(R.id.editTextDetailTime);
 
         Intent intent = getIntent();
 
@@ -32,6 +33,7 @@ public class TaskDetail extends AppCompatActivity {
         titles.setText(taskReceive.getTitle());
         courses.setText(taskReceive.getCourse());
         dates.setText(taskReceive.getDate());
+        time.setText(taskReceive.getTime());
         descriptions.setText(taskReceive.getDesc());
 
 //        System.out.println("Course " + course);

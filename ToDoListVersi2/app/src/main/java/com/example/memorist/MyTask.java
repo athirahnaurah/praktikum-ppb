@@ -20,6 +20,10 @@ public class MyTask implements Parcelable {
     @NonNull
     String date;
 
+    @ColumnInfo(name="time")
+    @NonNull
+    String time;
+
     @ColumnInfo(name="desc")
     String desc;
 
@@ -27,9 +31,10 @@ public class MyTask implements Parcelable {
     @NonNull
     String course;
 
-    public MyTask(String title, String date, String desc, String course) {
+    public MyTask(String title, String date, String desc, String course, String time) {
         this.title = title;
         this.date = date;
+        this.time = time;
         this.desc = desc;
         this.course = course;
     }
@@ -48,6 +53,14 @@ public class MyTask implements Parcelable {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String date) {
+        this.time = time;
     }
 
     public String getDesc() {
@@ -77,6 +90,7 @@ public class MyTask implements Parcelable {
         parcel.writeString(this.title);
         parcel.writeString(this.course);
         parcel.writeString(this.date);
+        parcel.writeString(this.time);
         parcel.writeString(this.desc);
     }
 
@@ -85,6 +99,7 @@ public class MyTask implements Parcelable {
         this.title = in.readString();
         this.course = in.readString();
         this.date = in.readString();
+        this.time = in.readString();
         this.desc = in.readString();
     }
 
